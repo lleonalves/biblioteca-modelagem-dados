@@ -13,17 +13,3 @@ Projeto acadêmico desenvolvido para a disciplina de **Modelagem de Dados**, ond
 
 #Diagrama DER  
 [Diagrama DER da Biblioteca] (diagramas/modelagem_dados.png)
-
-## 💡 Consultas SQL Exemplo  
-```sql
--- Livros emprestados para um aluno específico:
-SELECT l.titulo, e.data_emprestimo  
-FROM Emprestimo e  
-JOIN Livro l ON e.livro_id = l.id  
-WHERE e.aluno_id = 123;  
-
--- Total de empréstimos por colaborador:
-SELECT c.nome, COUNT(e.id) AS total_emprestimos  
-FROM Colaborador c  
-JOIN Emprestimo e ON c.id = e.colaborador_id  
-GROUP BY c.nome;  
